@@ -63,3 +63,10 @@ function saveNoteText(e) {
     e.target.innerHTML=e.target.value;
     saveNotes();
 }
+setInterval(() => {
+    saveNotes();
+}, 100);
+window.addEventListener("beforeunload", () => {
+    saveNotes();
+});
+
